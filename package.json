@@ -1,0 +1,36 @@
+{
+	"name": "fox-blocks",
+	"version": "1.0.0",
+	"description": "Fox Blocks",
+	"main": "src/index.js",
+	"private": true,
+	"scripts": {
+		"start": "parcel watch src/index.js",
+		"build": "parcel build src/index.js",
+		"package": "./bin/build-plugin-zip.sh"
+	},
+	"keywords": [
+		"wordpress",
+		"plugin",
+		"javascript",
+		"gutenberg",
+		"editor"
+	],
+	"author": "Sami Keijonen",
+	"license": "MIT",
+	"devDependencies": {
+		"@babel/core": "^7.1.6",
+		"@wordpress/babel-preset-default": "^3.0.1",
+		"@wordpress/browserslist-config": "^2.2.2",
+		"eslint": "^5.9.0",
+		"eslint-config-wordpress": "^2.0.0",
+		"parcel-bundler": "^1.10.3",
+		"@wordpress/blocks": "^6.0.0",
+		"@wordpress/editor": "^8.0.0",
+		"@wordpress/element": "^2.1.8",
+		"@wordpress/i18n": "^3.1.0"
+	},
+	"browserslist": [
+		"extends @wordpress/browserslist-config"
+	]
+}
