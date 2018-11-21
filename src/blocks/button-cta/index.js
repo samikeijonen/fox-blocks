@@ -13,7 +13,15 @@ const {
 	BlockAlignmentToolbar,
 	BlockControls,
 	RichText,
+	UrlInput,
 } = wp.editor;
+
+// Register components.
+const {
+    IconButton,
+    Tooltip,
+    TextControl,
+} = wp.components;
 
 registerBlockType( 'fox-blocks/button-cta', {
 	title: __( 'Button CTA' ),
@@ -32,6 +40,18 @@ registerBlockType( 'fox-blocks/button-cta', {
 			source: 'children',
 			selector: '.callout__text',
 		},
+		urlText: {
+			type: 'string',
+			source: 'text',
+			selector: 'a',
+			default: '',
+		},
+		url: {
+			type: 'string',
+			source: 'attribute',
+			attribute: 'href',
+			selector: 'a',
+		},
 		alignment: {
             type: 'string',
 		},
@@ -45,8 +65,8 @@ registerBlockType( 'fox-blocks/button-cta', {
 		}
 	},
 
-	edit( { attributes, className, setAttributes } ) {
-		const { title, text, alignment, blockAlignment } = attributes;
+	edit( { attributes, className, setAttributes, isSelected } ) {
+		const { title, text, urlText, url, alignment, blockAlignment } = attributes;
 
 		const classNameEdit = classnames(
 			'callout',
@@ -83,13 +103,26 @@ registerBlockType( 'fox-blocks/button-cta', {
 						onChange={ nextContent => setAttributes({ text: nextContent }) }
 						value={ text }
 					/>
+					<TextControl
+						id="example-input-field"
+						label={ __( 'Link Text' ) }
+						value={ urlText }
+						onChange={ urlText => setAttributes( { urlText } ) }
+					/>
+					<TextControl
+						id="example-url-field"
+						label={ __( 'Link URL' ) }
+						className="url"
+						value={ url }
+						onChange={ url => setAttributes( { url } ) }
+					/>
 				</div>
 			</Fragment>
         );
     },
 
     save( { attributes } ) {
-		const { title, text, alignment, blockAlignment } = attributes;
+		const { title, text, urlText, url, alignment, blockAlignment } = attributes;
 
 		const className = classnames(
 			'callout', {
@@ -106,12 +139,18 @@ registerBlockType( 'fox-blocks/button-cta', {
 			<div style={ styles } className={ className ? className : undefined }>
 				<RichText.Content
 					tagName='h2'
-					className='callout__title'
+					className="callout__title"
 					value={ title }
 				/>
-				<div className='callout__text'>
+				<div className="callout__text">
 					{ text }
 				</div>
+				<RichText.Content
+					tagName="a"
+					className="wp-block-button__link"
+					href={ url }
+					value={ urlText }
+				/>
 			</div>
         );
     }
