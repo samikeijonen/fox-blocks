@@ -1,10 +1,8 @@
-import { createElement } from '@wordpress/element';
-//import { registerBlockType } from '@wordpress/blocks';
-//import { __ } from '@wordpress/i18n';
-//import { RichText, MediaUpload } from '@wordpress/editor';
+// External dependencies.
 import classnames from 'classnames';
-const { Fragment } = wp.element;
 
+// WordPress dependencies.
+const { Fragment, createElement } = wp.element;
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 

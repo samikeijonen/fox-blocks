@@ -1,13 +1,10 @@
-import { createElement } from '@wordpress/element';
-//import { registerBlockType } from '@wordpress/blocks';
-//import { __ } from '@wordpress/i18n';
-//import { RichText, MediaUpload } from '@wordpress/editor';
-
+// WordPress dependencies.
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { RichText } = wp.editor;
 const { TextControl } = wp.components;
 
+// Register block.
 registerBlockType( 'fox-blocks/text-cta', {
 	title: __( 'Text CTA' ),
 	description: __( 'Test CTA desc' ),
