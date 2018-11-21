@@ -37,8 +37,6 @@ function fox_blocks_register_block() {
 			'wp-editor',
 			'wp-element',
 			'wp-components',
-			'wp-edit-post',
-			'wp-api',
 		),
 		'1.0.0',
 		true
