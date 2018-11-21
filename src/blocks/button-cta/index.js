@@ -2,28 +2,18 @@
 import classnames from 'classnames';
 
 // WordPress dependencies.
-const { Fragment, createElement } = wp.element;
+import { createElement } from '@wordpress/element';
+const { Fragment } = wp.element;
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 
 // Register editor components.
 const {
 	AlignmentToolbar,
-	URLInput,
-	BlockControls,
 	BlockAlignmentToolbar,
-	MediaUpload,
+	BlockControls,
 	RichText,
 } = wp.editor;
-
-// Register components.
-const {
-	Button,
-	withFallbackStyles,
-	IconButton,
-	Dashicon,
-	Toolbar,
-} = wp.components;
 
 registerBlockType( 'fox-blocks/button-cta', {
 	title: __( 'Button CTA' ),
@@ -44,11 +34,19 @@ registerBlockType( 'fox-blocks/button-cta', {
 		},
 		alignment: {
             type: 'string',
-        },
+		},
+		blockAlignment: {
+			type: 'string',
+		},
+	},
+	getEditWrapperProps( { blockAlignment } ) {
+		if ( 'left' === blockAlignment || 'right' === blockAlignment || 'full' === blockAlignment || 'wide' === blockAlignment ) {
+			return { 'data-align': blockAlignment };
+		}
 	},
 
 	edit( { attributes, className, setAttributes } ) {
-		const { title, text, alignment } = attributes;
+		const { title, text, alignment, blockAlignment } = attributes;
 
 		const classNameEdit = classnames(
 			'callout',
@@ -63,6 +61,10 @@ registerBlockType( 'fox-blocks/button-cta', {
 		return (
 			<Fragment>
                 <BlockControls>
+					<BlockAlignmentToolbar
+                        value={ blockAlignment }
+                        onChange={ blockAlignment => setAttributes( { blockAlignment } ) }
+                    />
                     <AlignmentToolbar
                         value={ alignment }
                         onChange={ nextAlign => setAttributes({ alignment: nextAlign }) }
@@ -87,11 +89,13 @@ registerBlockType( 'fox-blocks/button-cta', {
     },
 
     save( { attributes } ) {
-		const { title, text, alignment } = attributes;
+		const { title, text, alignment, blockAlignment } = attributes;
 
 		const className = classnames(
-			'callout',
-			{ [ `is-text-${ alignment }` ]: alignment }
+			'callout', {
+				[ `is-text-${ alignment }` ]: alignment,
+				[ `align${ blockAlignment }` ]: blockAlignment,
+			},
 		);
 
 		const styles = {
