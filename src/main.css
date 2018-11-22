@@ -1,0 +1,17 @@
+.callout {
+	background-color: #f4f4f4;
+	margin-bottom: 2rem;
+	padding: 4rem 1.5rem;
+}
+
+.callout__text {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 44rem;
+}
+
+.callout__text p,
+.editor-styles-wrapper .callout__text p {
+	font-size: var(--font-size-h3);
+	line-height: var(--line-height-global);
+}

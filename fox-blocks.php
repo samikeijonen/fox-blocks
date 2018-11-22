@@ -42,10 +42,19 @@ function fox_blocks_register_block() {
 		true
 	);
 
+	wp_register_style(
+		'fox-blocks-styles',
+		fox_blocks_url( 'dist/main.css' ),
+		array(),
+		'1.0.0'
+	);
+
 	register_block_type(
 		'fox-blocks/library',
 		array(
 			'editor_script' => 'fox-blocks',
+			'editor_style'  => 'fox-blocks-styles',
+			'style'         => 'fox-blocks-styles',
 		)
 	);
 }
