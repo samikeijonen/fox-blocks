@@ -5,8 +5,8 @@
 	"main": "src/index.js",
 	"private": true,
 	"scripts": {
-		"start": "parcel watch src/index.js",
-		"build": "parcel build src/index.js",
+		"start": "parcel watch src/index.js src/main.css",
+		"build": "parcel build src/index.js src/main.css",
 		"package": "./bin/build-plugin-zip.sh"
 	},
 	"keywords": [
@@ -32,7 +32,11 @@
 		"extends @wordpress/browserslist-config"
 	],
 	"dependencies": {
+		"@wordpress/components": "^7.0.1",
+		"@wordpress/compose": "^3.0.0",
+		"@wordpress/editor": "^9.0.1",
 		"@wordpress/element": "^2.1.8",
+		"@wordpress/i18n": "^3.1.0",
 		"classnames": "^2.2.6"
 	}
 }
