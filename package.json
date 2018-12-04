@@ -5,8 +5,8 @@
 	"main": "src/index.js",
 	"private": true,
 	"scripts": {
-		"start": "parcel watch src/index.js src/main.css",
-		"build": "parcel build src/index.js src/main.css",
+		"start": "parcel watch src/index.js src/main.css src/editor.css",
+		"build": "parcel build src/index.js src/main.css src/editor.css",
 		"package": "./bin/build-plugin-zip.sh"
 	},
 	"keywords": [
@@ -26,7 +26,8 @@
 		"eslint-config-wordpress": "^2.0.0",
 		"eslint-plugin-jsx-a11y": "^6.1.2",
 		"eslint-plugin-react": "^7.11.1",
-		"parcel-bundler": "^1.10.3"
+		"parcel-bundler": "^1.10.3",
+		"postcss-editor-styles": "^0.1.0"
 	},
 	"browserslist": [
 		"extends @wordpress/browserslist-config"

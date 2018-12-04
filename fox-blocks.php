@@ -49,13 +49,30 @@ function fox_blocks_register_block() {
 		'1.0.0'
 	);
 
+	wp_register_style(
+		'fox-blocks-editor',
+		fox_blocks_url( 'dist/editor.css' ),
+		array(),
+		'1.0.0'
+	);
+
 	register_block_type(
 		'fox-blocks/library',
 		array(
 			'editor_script' => 'fox-blocks',
-			'editor_style'  => 'fox-blocks-styles',
+			'editor_style'  => 'fox-blocks-editor',
 			'style'         => 'fox-blocks-styles',
 		)
 	);
+
+	// Load fetch posts block.
+	require_once plugin_dir_path( __FILE__ ) . 'src/blocks/fetch-posts/index.php';
 }
 add_action( 'init', 'fox_blocks_register_block' );
+
+/**
+ * Initialize the blocks
+ */
+function fox_blocks_loader() {
+}
+add_action( 'plugins_loaded', 'fox_blocks_loader' );

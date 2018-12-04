@@ -78,18 +78,18 @@ class ButtonEdit extends Component {
 			text,
 			urlText,
 			url,
-			alignment,
+			align,
 			blockAlignment
 		} = attributes;
 
 		const classNameEdit = classnames(
 			'callout',
-			{ [ `is-text-${ alignment }` ]: alignment },
+			{ [ `is-text-${ align }` ]: align },
 			className
 		);
 
 		const styles = {
-			textAlign: alignment,
+			textAlign: align,
 		};
 
 		return (
@@ -100,8 +100,8 @@ class ButtonEdit extends Component {
                         onChange={ blockAlignment => setAttributes( { blockAlignment } ) }
                     />
                     <AlignmentToolbar
-                        value={ alignment }
-                        onChange={ nextAlign => setAttributes({ alignment: nextAlign }) }
+                        value={ align }
+                        onChange={ nextAlign => setAttributes({ align: nextAlign }) }
                     />
                 </BlockControls>
 

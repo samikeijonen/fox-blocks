@@ -44,11 +44,12 @@ registerBlockType( 'fox-blocks/button-cta-1', {
 			attribute: 'href',
 			selector: 'a',
 		},
-		alignment: {
+		align: {
             type: 'string',
 		},
 		blockAlignment: {
 			type: 'string',
+			supports: [ 'full', 'wide' ]
 		},
 	},
 	getEditWrapperProps( { blockAlignment } ) {
@@ -65,7 +66,7 @@ registerBlockType( 'fox-blocks/button-cta-1', {
 			text,
 			urlText,
 			url,
-			alignment,
+			align,
 			blockAlignment,
 			backgroundColor,
 			textColor,
@@ -78,13 +79,13 @@ registerBlockType( 'fox-blocks/button-cta-1', {
 
 		const className = classnames(
 			'callout', {
-				[ `is-text-${ alignment }` ]: alignment,
+				[ `is-text-${ align }` ]: align,
 				[ `align${ blockAlignment }` ]: blockAlignment,
 			},
 		);
 
 		const styles = {
-			textAlign: alignment,
+			textAlign: align,
 		};
 
 		const buttonClasses = classnames( 'wp-block-button__link', {
