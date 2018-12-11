@@ -1,8 +1,8 @@
 // WordPress dependencies.
 const { __ } = wp.i18n;
-const { createElement } = wp.element;
+const { Fragment, createElement } = wp.element;
 const { registerBlockType } = wp.blocks;
-const { ServerSideRender } = wp.components;
+const { ServerSideRender, TextControl } = wp.components;
 
 // Register the block
 registerBlockType( 'fox-blocks/remote-posts', {
@@ -15,13 +15,37 @@ registerBlockType( 'fox-blocks/remote-posts', {
 		html: false
 	},
 
-	edit: function( props ) {
+	edit( { attributes, className, isSelected, setAttributes } ) {
+		const { url } = attributes;
+
         // Ensure the block attributes matches this plugin's name.
         return (
-            <ServerSideRender
-                block="fox-blocks/remote-posts"
-                attributes={ props.attributes }
-            />
+			<div className={ className }>
+			{ isSelected ? (
+
+				<Fragment>
+					<form
+						className="blocks-format-toolbar__link-modal-line blocks-format-toolbar__link-modal-line"
+						onSubmit={ event => event.preventDefault() }
+					>
+						<TextControl
+							className="url"
+							label={ __( 'Remote posts URL', 'fox-blocks' ) }
+							value={ attributes.url }
+							onChange={ url => setAttributes( { url } ) }
+						/>
+					</form>
+				</Fragment>
+
+			) : (
+
+				<ServerSideRender
+                	block="fox-blocks/remote-posts"
+                	attributes={ attributes }
+            	/>
+
+			) }
+			</div>
         );
     },
 
