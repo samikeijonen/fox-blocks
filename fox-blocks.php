@@ -65,10 +65,10 @@ function fox_blocks_register_block() {
 		)
 	);
 
-	// Load fetch posts block.
-	require_once plugin_dir_path( __FILE__ ) . 'src/blocks/fetch-posts/index.php';
+	// Load remote posts block.
+	require_once plugin_dir_path( __FILE__ ) . 'src/blocks/remote-posts/index.php';
 }
-add_action( 'init', 'fox_blocks_register_block' );
+add_action( 'plugins_loaded', 'fox_blocks_register_block' );
 
 /**
  * Initialize the blocks
