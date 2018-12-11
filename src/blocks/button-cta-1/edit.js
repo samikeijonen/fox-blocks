@@ -5,12 +5,8 @@ import classnames from 'classnames';
 
 
 // WordPress dependencies
-import { createElement } from '@wordpress/element';
-
 const { __ } = wp.i18n;
-
-const { Component, Fragment } = wp.element;
-
+const { Component, Fragment, createElement } = wp.element;
 const { compose } = wp.compose;
 
 const {

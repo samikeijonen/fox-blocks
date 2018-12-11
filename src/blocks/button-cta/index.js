@@ -2,8 +2,7 @@
 import classnames from 'classnames';
 
 // WordPress dependencies.
-import { createElement } from '@wordpress/element';
-const { Fragment } = wp.element;
+const { Fragment, createElement } = wp.element;
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 
