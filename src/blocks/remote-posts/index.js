@@ -18,8 +18,8 @@ registerBlockType( 'fox-blocks/remote-posts', {
 	edit( { attributes, className, isSelected, setAttributes } ) {
 		const { url } = attributes;
 
-        // Ensure the block attributes matches this plugin's name.
         return (
+			// If the block is selected, show input field for remote URL.
 			<div className={ className }>
 			{ isSelected ? (
 
@@ -39,6 +39,7 @@ registerBlockType( 'fox-blocks/remote-posts', {
 
 			) : (
 
+				// Else render the PHP output.
 				<ServerSideRender
                 	block="fox-blocks/remote-posts"
                 	attributes={ attributes }
