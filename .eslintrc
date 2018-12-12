@@ -1,15 +1,36 @@
 {
-	"extends": "wordpress",
+	"parser": "babel-eslint",
+	"extends": [
+		"wordpress",
+		"plugin:react/recommended",
+		"plugin:jsx-a11y/recommended",
+		"plugin:jest/recommended"
+	],
 	"env": {
+		"browser": false,
 		"es6": true,
-		"jquery": true
+		"node": true,
+		"mocha": true
 	},
 	"parserOptions": {
 		"sourceType": "module"
 	},
+	"globals": {
+		"wp": true,
+		"wpApiSettings": true,
+		"window": true,
+		"document": true
+	},
+	"plugins": ["react", "jsx-a11y", "jest"],
+	"settings": {
+		"react": {
+			"pragma": "wp"
+		}
+	},
 	"rules": {
 		"space-in-parens": 0,
 		"wrap-iife": 0,
-		"lines-around-comment": 0
+		"lines-around-comment": 0,
+		"react/prop-types": "off"
 	}
 }

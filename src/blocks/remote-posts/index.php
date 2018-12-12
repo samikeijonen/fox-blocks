@@ -57,7 +57,7 @@ function fb_render_block_core_remote_posts( $attributes ) {
 /**
  * Registers the `fox-blocks/remote-posts` block on server.
  */
-function fb_register_block_core_remote_posts( $attributes ) {
+function fb_register_block_core_remote_posts() {
 	// Check if the register function exists.
 	if ( ! function_exists( 'register_block_type' ) ) {
 		return;

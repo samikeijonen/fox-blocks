@@ -41,9 +41,9 @@ registerBlockType( 'fox-blocks/remote-posts', {
 
 				// Else render the PHP output.
 				<ServerSideRender
-                	block="fox-blocks/remote-posts"
-                	attributes={ attributes }
-            	/>
+					block="fox-blocks/remote-posts"
+					attributes={ attributes }
+				/>
 
 			) }
 			</div>
