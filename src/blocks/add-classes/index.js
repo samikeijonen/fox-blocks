@@ -4,7 +4,7 @@
  * @link https://wordpress.org/gutenberg/handbook/designers-developers/developers/filters/block-filters/#blocks-registerblocktype
  */
 function addBlockClassNames( settings, name ) {
-    if ( name !== 'core/list' && name !== 'core/paragraph' && name !== 'core/heading' ) {
+    if ( 'core/list' !== name && 'core/paragraph' !== name && 'core/heading' !== name ) {
         return settings;
     }
 

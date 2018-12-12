@@ -1,4 +1,9 @@
 dist
 node_modules
+vendor
 .cache
+.vscode
+/composer.lock
+/phpcs.xml
+/.phpcs.xml
 wp-js-plugin-starter.zip

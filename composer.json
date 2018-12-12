@@ -1,0 +1,21 @@
+{
+	"name": "samikeijonen/fox-blocks",
+	"type": "wordpress-plugin",
+	"description" : "Editor blocks.",
+	"keywords": ["wordpress"],
+	"homepage": "https://github.com/samikeijonen/fox-blocks",
+	"license": "GPL-2.0-or-later",
+	"authors": [
+		{
+			"name": "Sami Keijonen",
+			"email": "sami.keijonen@foxnet.fi",
+			"homepage": "https://foxland.fi"
+		}
+	],
+	"require": {
+		"php": ">=7.0"
+	},
+	"require-dev": {
+		"samikeijonen/phpcs-composer": "dev-master"
+	}
+}

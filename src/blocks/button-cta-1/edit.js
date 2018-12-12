@@ -12,7 +12,7 @@ const { compose } = wp.compose;
 const {
 	Dashicon,
 	IconButton,
-	withFallbackStyles,
+	withFallbackStyles
 } = wp.components;
 
 const {
@@ -24,7 +24,7 @@ const {
 	ContrastChecker,
 	InspectorControls,
 	withColors,
-	PanelColorSettings,
+	PanelColorSettings
 } = wp.editor;
 
 const { getComputedStyle } = window;
@@ -37,7 +37,7 @@ const applyFallbackStyles = withFallbackStyles( ( node, ownProps ) => {
 	const textNode = ! textColorValue && node ? node.querySelector( '[contenteditable="true"]' ) : null;
 	return {
 		fallbackBackgroundColor: backgroundColorValue || ! node ? undefined : getComputedStyle( node ).backgroundColor,
-		fallbackTextColor: textColorValue || ! textNode ? undefined : getComputedStyle( textNode ).color,
+		fallbackTextColor: textColorValue || ! textNode ? undefined : getComputedStyle( textNode ).color
 	};
 } );
 
@@ -66,7 +66,7 @@ class ButtonEdit extends Component {
 			fallbackTextColor,
 			setAttributes,
 			isSelected,
-			className,
+			className
 		} = this.props;
 
 		const {
@@ -85,7 +85,7 @@ class ButtonEdit extends Component {
 		);
 
 		const styles = {
-			textAlign: align,
+			textAlign: align
 		};
 
 		return (
@@ -126,12 +126,12 @@ class ButtonEdit extends Component {
 								'has-background': backgroundColor.color,
 								[ backgroundColor.class ]: backgroundColor.class,
 								'has-text-color': textColor.color,
-								[ textColor.class ]: textColor.class,
+								[ textColor.class ]: textColor.class
 							}
 						) }
 						style={ {
 							backgroundColor: backgroundColor.color,
-							color: textColor.color,
+							color: textColor.color
 						} }
 						keepPlaceholderOnFocus
 					/>
@@ -142,13 +142,13 @@ class ButtonEdit extends Component {
 								{
 									value: backgroundColor.color,
 									onChange: setBackgroundColor,
-									label: __( 'Background Color' ),
+									label: __( 'Background Color' )
 								},
 								{
 									value: textColor.color,
 									onChange: setTextColor,
-									label: __( 'Text Color' ),
-								},
+									label: __( 'Text Color' )
+								}
 							] }
 						>
 							<ContrastChecker
@@ -159,7 +159,7 @@ class ButtonEdit extends Component {
 									textColor: textColor.color,
 									backgroundColor: backgroundColor.color,
 									fallbackBackgroundColor,
-									fallbackTextColor,
+									fallbackTextColor
 								} }
 							/>
 						</PanelColorSettings>
@@ -184,5 +184,5 @@ class ButtonEdit extends Component {
 
 export default compose( [
 	withColors( 'backgroundColor', { textColor: 'color' } ),
-	applyFallbackStyles,
+	applyFallbackStyles
 ] )( ButtonEdit );

@@ -69,10 +69,3 @@ function fox_blocks_register_block() {
 	require_once plugin_dir_path( __FILE__ ) . 'src/blocks/remote-posts/index.php';
 }
 add_action( 'plugins_loaded', 'fox_blocks_register_block' );
-
-/**
- * Initialize the blocks
- */
-function fox_blocks_loader() {
-}
-add_action( 'plugins_loaded', 'fox_blocks_loader' );

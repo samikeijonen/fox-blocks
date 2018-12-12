@@ -30,27 +30,27 @@ registerBlockType( 'fox-blocks/button-cta-1', {
 		text: {
 			type: 'array',
 			source: 'children',
-			selector: '.callout__text',
+			selector: '.callout__text'
 		},
 		urlText: {
 			type: 'string',
 			source: 'text',
 			selector: 'a',
-			default: '',
+			default: ''
 		},
 		url: {
 			type: 'string',
 			source: 'attribute',
 			attribute: 'href',
-			selector: 'a',
+			selector: 'a'
 		},
 		align: {
-            type: 'string',
+            type: 'string'
 		},
 		blockAlignment: {
 			type: 'string',
 			supports: [ 'full', 'wide' ]
-		},
+		}
 	},
 	getEditWrapperProps( { blockAlignment } ) {
 		if ( 'left' === blockAlignment || 'right' === blockAlignment || 'full' === blockAlignment || 'wide' === blockAlignment ) {
@@ -71,7 +71,7 @@ registerBlockType( 'fox-blocks/button-cta-1', {
 			backgroundColor,
 			textColor,
 			customBackgroundColor,
-			customTextColor,
+			customTextColor
 		} = attributes;
 
 		const textClass = getColorClassName( 'color', textColor );
@@ -80,19 +80,19 @@ registerBlockType( 'fox-blocks/button-cta-1', {
 		const className = classnames(
 			'callout', {
 				[ `is-text-${ align }` ]: align,
-				[ `align${ blockAlignment }` ]: blockAlignment,
+				[ `align${ blockAlignment }` ]: blockAlignment
 			},
 		);
 
 		const styles = {
-			textAlign: align,
+			textAlign: align
 		};
 
 		const buttonClasses = classnames( 'wp-block-button__link', {
 			'has-text-color': textColor || customTextColor,
 			[ textClass ]: textClass,
 			'has-background': backgroundColor || customBackgroundColor,
-			[ backgroundClass ]: backgroundClass,
+			[ backgroundClass ]: backgroundClass
 		} );
 
         return (

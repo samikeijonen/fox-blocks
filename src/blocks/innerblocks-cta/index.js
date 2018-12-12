@@ -10,7 +10,7 @@ const { registerBlockType } = wp.blocks;
 const {
 	AlignmentToolbar,
 	BlockControls,
-	InnerBlocks,
+	InnerBlocks
 } = wp.editor;
 
 registerBlockType( 'fox-blocks/innerblocks-cta', {
@@ -19,14 +19,14 @@ registerBlockType( 'fox-blocks/innerblocks-cta', {
 	icon: 'admin-site',
 	category: 'common',
 	supports: {
-		align: [ 'wide', 'full' ],
+		align: [ 'wide', 'full' ]
 	},
 
 	attributes: {
 		alignment: {
 			type: 'string',
-			default: 'center',
-		},
+			default: 'center'
+		}
 	},
 
 	edit( { attributes, className, setAttributes } ) {
@@ -39,7 +39,7 @@ registerBlockType( 'fox-blocks/innerblocks-cta', {
 		);
 
 		const styles = {
-			textAlign: alignment,
+			textAlign: alignment
 		};
 
 		return (
@@ -56,7 +56,7 @@ registerBlockType( 'fox-blocks/innerblocks-cta', {
 						template={ [
 							[ 'core/heading' ],
 							[ 'core/paragraph' ],
-							[ 'core/button' ],
+							[ 'core/button' ]
 						] }
 						templateLock={ false }
 					/>
@@ -70,12 +70,12 @@ registerBlockType( 'fox-blocks/innerblocks-cta', {
 
 		const className = classnames(
 			'callout', {
-				[ `text-${ alignment }` ]: alignment,
+				[ `text-${ alignment }` ]: alignment
 			},
 		);
 
 		const styles = {
-			textAlign: alignment,
+			textAlign: alignment
 		};
 
         return (

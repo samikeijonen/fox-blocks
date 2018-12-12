@@ -12,14 +12,14 @@ const {
 	BlockAlignmentToolbar,
 	BlockControls,
 	RichText,
-	UrlInput,
+	UrlInput
 } = wp.editor;
 
 // Register components.
 const {
     IconButton,
     Tooltip,
-    TextControl,
+    TextControl
 } = wp.components;
 
 registerBlockType( 'fox-blocks/button-cta', {
@@ -37,26 +37,26 @@ registerBlockType( 'fox-blocks/button-cta', {
 		text: {
 			type: 'array',
 			source: 'children',
-			selector: '.callout__text',
+			selector: '.callout__text'
 		},
 		urlText: {
 			type: 'string',
 			source: 'text',
 			selector: 'a',
-			default: '',
+			default: ''
 		},
 		url: {
 			type: 'string',
 			source: 'attribute',
 			attribute: 'href',
-			selector: 'a',
+			selector: 'a'
 		},
 		alignment: {
-            type: 'string',
+            type: 'string'
 		},
 		blockAlignment: {
-			type: 'string',
-		},
+			type: 'string'
+		}
 	},
 	getEditWrapperProps( { blockAlignment } ) {
 		if ( 'left' === blockAlignment || 'right' === blockAlignment || 'full' === blockAlignment || 'wide' === blockAlignment ) {
@@ -74,7 +74,7 @@ registerBlockType( 'fox-blocks/button-cta', {
 		);
 
 		const styles = {
-			textAlign: alignment,
+			textAlign: alignment
 		};
 
 		return (
@@ -126,12 +126,12 @@ registerBlockType( 'fox-blocks/button-cta', {
 		const className = classnames(
 			'callout', {
 				[ `is-text-${ alignment }` ]: alignment,
-				[ `align${ blockAlignment }` ]: blockAlignment,
+				[ `align${ blockAlignment }` ]: blockAlignment
 			},
 		);
 
 		const styles = {
-			textAlign: alignment,
+			textAlign: alignment
 		};
 
         return (

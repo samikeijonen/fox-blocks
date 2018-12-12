@@ -7,6 +7,10 @@
 	"scripts": {
 		"start": "parcel watch src/index.js src/main.css src/editor.css",
 		"build": "parcel build src/index.js src/main.css src/editor.css",
+		"lint": "npm run lint:css && npm run lint:js && npm run lint:php",
+		"lint:css": "cross-env stylelint './src/**/*.css'",
+		"lint:js": "cross-env eslint './src/**/*.js'",
+		"lint:php": "cross-env ./vendor/bin/phpcs .",
 		"package": "./bin/build-plugin-zip.sh"
 	},
 	"keywords": [
@@ -20,9 +24,11 @@
 	"license": "MIT",
 	"devDependencies": {
 		"@babel/core": "^7.2.0",
+		"@foxland/stylelint-config": "^1.0.2",
 		"@wordpress/babel-preset-default": "^3.0.1",
 		"@wordpress/browserslist-config": "^2.2.2",
 		"babel-eslint": "^10.0.1",
+		"cross-env": "^5.2.0",
 		"eslint": "^5.10.0",
 		"eslint-config-wordpress": "^2.0.0",
 		"eslint-plugin-jest": "^22.1.2",

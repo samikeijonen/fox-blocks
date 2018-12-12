@@ -20,8 +20,8 @@ registerBlockType( 'fox-blocks/text-cta', {
 		content: {
 			type: 'string',
 			source: 'html',
-			selector: 'p',
-		},
+			selector: 'p'
+		}
 	},
 
 	edit( { attributes, className, setAttributes } ) {
