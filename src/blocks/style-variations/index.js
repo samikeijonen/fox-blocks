@@ -10,5 +10,5 @@ const { __ } = wp.i18n;
  */
 wp.blocks.registerBlockStyle( 'core/button', {
 	name: 'circle-button',
-	label: __( 'Circle button', 'fox-blocks' )
+	label: __( 'Circle button', 'fox-blocks' ),
 } );

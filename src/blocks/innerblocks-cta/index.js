@@ -2,7 +2,7 @@
 import classnames from 'classnames';
 
 // WordPress dependencies.
-const { Fragment, createElement } = wp.element;
+const { Fragment } = wp.element;
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 
@@ -10,23 +10,23 @@ const { registerBlockType } = wp.blocks;
 const {
 	AlignmentToolbar,
 	BlockControls,
-	InnerBlocks
+	InnerBlocks,
 } = wp.editor;
 
 registerBlockType( 'fox-blocks/innerblocks-cta', {
-	title: __( 'Callout' ),
-	description: __( 'Callout with title, text, and CTA button.' ),
+	title: __( 'Callout', 'fox-blocks' ),
+	description: __( 'Callout with title, text, and CTA button.', 'fox-blocks' ),
 	icon: 'admin-site',
 	category: 'common',
 	supports: {
-		align: [ 'wide', 'full' ]
+		align: [ 'wide', 'full' ],
 	},
 
 	attributes: {
 		alignment: {
 			type: 'string',
-			default: 'center'
-		}
+			default: 'center',
+		},
 	},
 
 	edit( { attributes, className, setAttributes } ) {
@@ -39,49 +39,49 @@ registerBlockType( 'fox-blocks/innerblocks-cta', {
 		);
 
 		const styles = {
-			textAlign: alignment
+			textAlign: alignment,
 		};
 
 		return (
 			<Fragment>
-                <BlockControls>
-                    <AlignmentToolbar
-                        value={ alignment }
-                        onChange={ nextAlign => setAttributes({ alignment: nextAlign }) }
-                    />
-                </BlockControls>
+				<BlockControls>
+					<AlignmentToolbar
+						value={ alignment }
+						onChange={ ( nextAlign ) => setAttributes( { alignment: nextAlign } ) }
+					/>
+				</BlockControls>
 				<div style={ styles } className={ classNameEdit ? classNameEdit : undefined }>
 					<InnerBlocks
 						allowedBlocks={ [ 'core/heading', 'core/paragraph', 'core/button' ] }
 						template={ [
 							[ 'core/heading' ],
 							[ 'core/paragraph' ],
-							[ 'core/button' ]
+							[ 'core/button' ],
 						] }
 						templateLock={ false }
 					/>
 				</div>
 			</Fragment>
-        );
-    },
+		);
+	},
 
-    save( { attributes } ) {
+	save( { attributes } ) {
 		const { alignment } = attributes;
 
 		const className = classnames(
 			'callout', {
-				[ `text-${ alignment }` ]: alignment
+				[ `text-${ alignment }` ]: alignment,
 			},
 		);
 
 		const styles = {
-			textAlign: alignment
+			textAlign: alignment,
 		};
 
-        return (
+		return (
 			<div style={ styles } className={ className ? className : undefined }>
 				<InnerBlocks.Content />
 			</div>
-        );
-    }
+		);
+	},
 } );

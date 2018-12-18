@@ -2,22 +2,21 @@
 import classnames from 'classnames';
 
 // WordPress dependencies.
-const { createElement } = wp.element;
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 
 // Register editor components.
 const {
 	RichText,
-	getColorClassName
+	getColorClassName,
 } = wp.editor;
 
 // Internal dependencies.
 import edit from './edit';
 
 registerBlockType( 'fox-blocks/button-cta-1', {
-	title: __( 'Button CTA 1' ),
-	description: __( 'Button CTA desc 1, with button block' ),
+	title: __( 'Button CTA 1', 'fox-blocks' ),
+	description: __( 'Button CTA desc 1, with button block', 'fox-blocks' ),
 	icon: 'admin-site',
 	category: 'common',
 
@@ -25,32 +24,32 @@ registerBlockType( 'fox-blocks/button-cta-1', {
 		title: {
 			type: 'string',
 			source: 'text',
-			selector: 'h2'
+			selector: 'h2',
 		},
 		text: {
 			type: 'array',
 			source: 'children',
-			selector: '.callout__text'
+			selector: '.callout__text',
 		},
 		urlText: {
 			type: 'string',
 			source: 'text',
 			selector: 'a',
-			default: ''
+			default: '',
 		},
 		url: {
 			type: 'string',
 			source: 'attribute',
 			attribute: 'href',
-			selector: 'a'
+			selector: 'a',
 		},
 		align: {
-            type: 'string'
+			type: 'string',
 		},
 		blockAlignment: {
 			type: 'string',
-			supports: [ 'full', 'wide' ]
-		}
+			supports: [ 'full', 'wide' ],
+		},
 	},
 	getEditWrapperProps( { blockAlignment } ) {
 		if ( 'left' === blockAlignment || 'right' === blockAlignment || 'full' === blockAlignment || 'wide' === blockAlignment ) {
@@ -60,7 +59,7 @@ registerBlockType( 'fox-blocks/button-cta-1', {
 
 	edit,
 
-    save( { attributes } ) {
+	save( { attributes } ) {
 		const {
 			title,
 			text,
@@ -71,7 +70,7 @@ registerBlockType( 'fox-blocks/button-cta-1', {
 			backgroundColor,
 			textColor,
 			customBackgroundColor,
-			customTextColor
+			customTextColor,
 		} = attributes;
 
 		const textClass = getColorClassName( 'color', textColor );
@@ -80,25 +79,25 @@ registerBlockType( 'fox-blocks/button-cta-1', {
 		const className = classnames(
 			'callout', {
 				[ `is-text-${ align }` ]: align,
-				[ `align${ blockAlignment }` ]: blockAlignment
+				[ `align${ blockAlignment }` ]: blockAlignment,
 			},
 		);
 
 		const styles = {
-			textAlign: align
+			textAlign: align,
 		};
 
 		const buttonClasses = classnames( 'wp-block-button__link', {
 			'has-text-color': textColor || customTextColor,
 			[ textClass ]: textClass,
 			'has-background': backgroundColor || customBackgroundColor,
-			[ backgroundClass ]: backgroundClass
+			[ backgroundClass ]: backgroundClass,
 		} );
 
-        return (
+		return (
 			<div style={ styles } className={ className ? className : undefined }>
 				<RichText.Content
-					tagName='h2'
+					tagName="h2"
 					className="callout__title"
 					value={ title }
 				/>
@@ -112,6 +111,6 @@ registerBlockType( 'fox-blocks/button-cta-1', {
 					value={ urlText }
 				/>
 			</div>
-        );
-    }
+		);
+	},
 } );

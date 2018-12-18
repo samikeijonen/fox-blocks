@@ -1,6 +1,6 @@
 // WordPress dependencies.
 const { __ } = wp.i18n;
-const { Fragment, createElement } = wp.element;
+const { Fragment } = wp.element;
 const { registerBlockType } = wp.blocks;
 const { ServerSideRender, TextControl } = wp.components;
 
@@ -12,45 +12,43 @@ registerBlockType( 'fox-blocks/remote-posts', {
 	category: 'widgets',
 	keywords: [ __( 'remote posts', 'fox-blocks' ) ],
 	supports: {
-		html: false
+		html: false,
 	},
 
 	edit( { attributes, className, isSelected, setAttributes } ) {
-		const { url } = attributes;
-
-        return (
+		return (
 			// If the block is selected, show input field for remote URL.
 			<div className={ className }>
-			{ isSelected ? (
+				{ isSelected ? (
 
-				<Fragment>
-					<form
-						className="blocks-format-toolbar__link-modal-line blocks-format-toolbar__link-modal-line"
-						onSubmit={ event => event.preventDefault() }
-					>
-						<TextControl
-							className="url"
-							label={ __( 'Remote posts URL', 'fox-blocks' ) }
-							value={ attributes.url }
-							onChange={ url => setAttributes( { url } ) }
-						/>
-					</form>
-				</Fragment>
+					<Fragment>
+						<form
+							className="blocks-format-toolbar__link-modal-line blocks-format-toolbar__link-modal-line"
+							onSubmit={ ( event ) => event.preventDefault() }
+						>
+							<TextControl
+								className="url"
+								label={ __( 'Remote posts URL', 'fox-blocks' ) }
+								value={ attributes.url }
+								onChange={ ( url ) => setAttributes( { url } ) }
+							/>
+						</form>
+					</Fragment>
 
-			) : (
+				) : (
 
-				// Else render the PHP output.
-				<ServerSideRender
-					block="fox-blocks/remote-posts"
-					attributes={ attributes }
-				/>
+					// Else render the PHP output.
+					<ServerSideRender
+						block="fox-blocks/remote-posts"
+						attributes={ attributes }
+					/>
 
-			) }
+				) }
 			</div>
-        );
-    },
+		);
+	},
 
 	save() {
 		return null;
-	}
+	},
 } );

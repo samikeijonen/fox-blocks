@@ -2,7 +2,7 @@
 import classnames from 'classnames';
 
 // WordPress dependencies.
-const { Fragment, createElement } = wp.element;
+const { Fragment } = wp.element;
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 
@@ -12,19 +12,16 @@ const {
 	BlockAlignmentToolbar,
 	BlockControls,
 	RichText,
-	UrlInput
 } = wp.editor;
 
 // Register components.
 const {
-    IconButton,
-    Tooltip,
-    TextControl
+	TextControl,
 } = wp.components;
 
 registerBlockType( 'fox-blocks/button-cta', {
-	title: __( 'Button CTA' ),
-	description: __( 'Button CTA desc' ),
+	title: __( 'Button CTA', 'fox-blocks' ),
+	description: __( 'Button CTA desc', 'fox-blocks' ),
 	icon: 'admin-site',
 	category: 'common',
 
@@ -32,31 +29,31 @@ registerBlockType( 'fox-blocks/button-cta', {
 		title: {
 			type: 'string',
 			source: 'text',
-			selector: 'h2'
+			selector: 'h2',
 		},
 		text: {
 			type: 'array',
 			source: 'children',
-			selector: '.callout__text'
+			selector: '.callout__text',
 		},
 		urlText: {
 			type: 'string',
 			source: 'text',
 			selector: 'a',
-			default: ''
+			default: '',
 		},
 		url: {
 			type: 'string',
 			source: 'attribute',
 			attribute: 'href',
-			selector: 'a'
+			selector: 'a',
 		},
 		alignment: {
-            type: 'string'
+			type: 'string',
 		},
 		blockAlignment: {
-			type: 'string'
-		}
+			type: 'string',
+		},
 	},
 	getEditWrapperProps( { blockAlignment } ) {
 		if ( 'left' === blockAlignment || 'right' === blockAlignment || 'full' === blockAlignment || 'wide' === blockAlignment ) {
@@ -64,7 +61,7 @@ registerBlockType( 'fox-blocks/button-cta', {
 		}
 	},
 
-	edit( { attributes, className, setAttributes, isSelected } ) {
+	edit( { attributes, className, setAttributes } ) {
 		const { title, text, urlText, url, alignment, blockAlignment } = attributes;
 
 		const classNameEdit = classnames(
@@ -74,70 +71,70 @@ registerBlockType( 'fox-blocks/button-cta', {
 		);
 
 		const styles = {
-			textAlign: alignment
+			textAlign: alignment,
 		};
 
 		return (
 			<Fragment>
-                <BlockControls>
+				<BlockControls>
 					<BlockAlignmentToolbar
-                        value={ blockAlignment }
-                        onChange={ blockAlignment => setAttributes( { blockAlignment } ) }
-                    />
-                    <AlignmentToolbar
-                        value={ alignment }
-                        onChange={ nextAlign => setAttributes({ alignment: nextAlign }) }
-                    />
-                </BlockControls>
+						value={ blockAlignment }
+						onChange={ ( blockAlignmentValue ) => setAttributes( { blockAlignmentValue } ) }
+					/>
+					<AlignmentToolbar
+						value={ alignment }
+						onChange={ ( nextAlign ) => setAttributes( { alignment: nextAlign } ) }
+					/>
+				</BlockControls>
 				<div style={ styles } className={ classNameEdit ? classNameEdit : undefined }>
 					<RichText
-						onChange={ nextTitle => setAttributes({ title: nextTitle }) }
-						placeholder={ __( 'Callout title' ) }
-						tagName='h2'
+						onChange={ ( nextTitle ) => setAttributes( { title: nextTitle } ) }
+						placeholder={ __( 'Callout title', 'fox-blocks' ) }
+						tagName="h2"
 						value={ title }
 					/>
 					<RichText
-						multiline='p'
+						multiline="p"
 						placeholder={ __( 'Callout text' ) }
-						onChange={ nextContent => setAttributes({ text: nextContent }) }
+						onChange={ ( nextContent ) => setAttributes( { text: nextContent } ) }
 						value={ text }
 					/>
 					<TextControl
 						id="example-input-field"
 						label={ __( 'Link Text' ) }
 						value={ urlText }
-						onChange={ urlText => setAttributes( { urlText } ) }
+						onChange={ ( urlTextValue ) => setAttributes( { urlTextValue } ) }
 					/>
 					<TextControl
 						id="example-url-field"
 						label={ __( 'Link URL' ) }
 						className="url"
 						value={ url }
-						onChange={ url => setAttributes( { url } ) }
+						onChange={ ( urlValue ) => setAttributes( { urlValue } ) }
 					/>
 				</div>
 			</Fragment>
-        );
-    },
+		);
+	},
 
-    save( { attributes } ) {
+	save( { attributes } ) {
 		const { title, text, urlText, url, alignment, blockAlignment } = attributes;
 
 		const className = classnames(
 			'callout', {
 				[ `is-text-${ alignment }` ]: alignment,
-				[ `align${ blockAlignment }` ]: blockAlignment
+				[ `align${ blockAlignment }` ]: blockAlignment,
 			},
 		);
 
 		const styles = {
-			textAlign: alignment
+			textAlign: alignment,
 		};
 
-        return (
+		return (
 			<div style={ styles } className={ className ? className : undefined }>
 				<RichText.Content
-					tagName='h2'
+					tagName="h2"
 					className="callout__title"
 					value={ title }
 				/>
@@ -151,6 +148,6 @@ registerBlockType( 'fox-blocks/button-cta', {
 					value={ urlText }
 				/>
 			</div>
-        );
-    }
+		);
+	},
 } );

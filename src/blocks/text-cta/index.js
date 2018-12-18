@@ -2,12 +2,11 @@
 const { __ } = wp.i18n;
 const { registerBlockType } = wp.blocks;
 const { RichText } = wp.editor;
-const { TextControl } = wp.components;
 
 // Register block.
 registerBlockType( 'fox-blocks/text-cta', {
-	title: __( 'Text CTA' ),
-	description: __( 'Test CTA desc' ),
+	title: __( 'Text CTA', 'fox-blocks' ),
+	description: __( 'Test CTA desc', 'fox-blocks' ),
 	icon: 'admin-site',
 	category: 'common',
 
@@ -15,13 +14,13 @@ registerBlockType( 'fox-blocks/text-cta', {
 		title: {
 			type: 'string',
 			source: 'text',
-			selector: 'h2'
+			selector: 'h2',
 		},
 		content: {
 			type: 'string',
 			source: 'html',
-			selector: 'p'
-		}
+			selector: 'p',
+		},
 	},
 
 	edit( { attributes, className, setAttributes } ) {
@@ -36,38 +35,38 @@ registerBlockType( 'fox-blocks/text-cta', {
 		}
 
 		return (
-			<div className={className}>
+			<div className={ className }>
 				<RichText
-					tagName='h2'
-					placeholder={ __( 'Callout title' ) }
-					label={ __( 'Title' ) }
-					value={title}
+					tagName="h2"
+					placeholder={ __( 'Callout title', 'fox-blocks' ) }
+					label={ __( 'Title', 'fox-blocks' ) }
+					value={ title }
 					onChange={ onChangeTitle }
 				/>
 				<RichText
-					tagName='p'
+					tagName="p"
 					placeholder={ __( 'Callout text' ) }
 					onChange={ onChangeContent }
 					value={ content }
 				/>
 			</div>
-        );
-    },
+		);
+	},
 
-    save( { attributes } ) {
-        const { title, content } = attributes;
+	save( { attributes } ) {
+		const { title, content } = attributes;
 
-        return (
+		return (
 			<div>
 				<RichText.Content
-					tagName='h2'
+					tagName="h2"
 					value={ title }
 				/>
 				<RichText.Content
-					tagName='p'
+					tagName="p"
 					value={ content }
 				/>
 			</div>
-        );
-    }
+		);
+	},
 } );
