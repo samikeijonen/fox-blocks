@@ -2,9 +2,6 @@
 	"extends": [ "plugin:@wordpress/eslint-plugin/recommended" ],
 	"globals": {
 		"wp": true,
-		"wpApiSettings": true,
-		"window": true,
-		"document": true,
 		"lodash": true
 	}
 }
