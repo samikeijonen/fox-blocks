@@ -5,6 +5,8 @@
  * @package FoxBlocks
  */
 
+namespace Fox\Blocks;
+
 /**
  * Renders the `fox-blocks/remote-posts` block on server.
  *
@@ -12,7 +14,7 @@
  *
  * @return string Returns the post content with remote posts added.
  */
-function fb_render_block_core_remote_posts( $attributes ) {
+function render_block_remote_posts( $attributes ) {
 	// Get $request from transient if it exists.
 	$request = get_transient( 'fox_blocks_remote_posts' );
 
@@ -57,7 +59,7 @@ function fb_render_block_core_remote_posts( $attributes ) {
 /**
  * Registers the `fox-blocks/remote-posts` block on server.
  */
-function fb_register_block_core_remote_posts() {
+function register_block_remote_posts() {
 	// Check if the register function exists.
 	if ( ! function_exists( 'register_block_type' ) ) {
 		return;
@@ -74,8 +76,8 @@ function fb_register_block_core_remote_posts() {
 					'type' => 'string',
 				),
 			),
-			'render_callback' => 'fb_render_block_core_remote_posts',
+			'render_callback' => __NAMESPACE__ . '\render_block_remote_posts',
 		)
 	);
 }
-add_action( 'init', 'fb_register_block_core_remote_posts' );
+add_action( 'init', __NAMESPACE__ . '\register_block_remote_posts' );
