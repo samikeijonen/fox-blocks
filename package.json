@@ -25,6 +25,7 @@
 	"devDependencies": {
 		"@babel/core": "^7.2.0",
 		"@foxland/stylelint-config": "^1.0.2",
+		"@wordpress/babel-plugin-makepot": "^2.1.2",
 		"@wordpress/babel-preset-default": "^3.0.1",
 		"@wordpress/browserslist-config": "^2.2.2",
 		"@wordpress/eslint-plugin": "^1.0.0",

@@ -5,6 +5,8 @@
  * Description: Fox Blocks for editor.
  * Version: 1.0.0
  * Author: Sami Keijonen
+ * Text Domain: fox-blocks
+ * Domain Path: /languages
  *
  * @package FoxBlocks
  */
@@ -126,7 +128,7 @@ final class Plugin {
 	 */
 	public function register_blocks() {
 		wp_register_script(
-			'fox-blocks',
+			'fox-blocks-script',
 			$this->uri . 'dist/index.js',
 			array(
 				'wp-blocks',
@@ -138,6 +140,8 @@ final class Plugin {
 			'1.0.0',
 			true
 		);
+
+		wp_set_script_translations( 'fox-blocks-script', 'fox-blocks', $this->dir . 'languages' );
 
 		wp_register_style(
 			'fox-blocks-styles',

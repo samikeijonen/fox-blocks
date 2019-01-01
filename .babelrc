@@ -9,5 +9,11 @@
 		[ "@babel/transform-react-jsx", {
 				"pragma": "createElement",
 		} ],
+		[
+			"@wordpress/babel-plugin-makepot",
+			{
+				"output": "languages/fox-blocks-js.pot",
+			},
+		],
 	],
 }

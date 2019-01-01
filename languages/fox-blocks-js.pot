@@ -1,0 +1,19 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"X-Generator: babel-plugin-makepot\n"
+
+#: src/blocks/add-classes/index.js:37
+msgctxt "button block style"
+msgid "Rounded"
+msgstr ""
+
+#: src/blocks/add-classes/index.js:38
+msgctxt "button block style"
+msgid "Outlined"
+msgstr ""
+
+#: src/blocks/add-classes/index.js:39
+msgctxt "button block style"
+msgid "Squared"
+msgstr ""
