@@ -5,6 +5,9 @@
  * Description: Fox Blocks for editor.
  * Version: 1.0.0
  * Author: Sami Keijonen
+ * License: MIT
+ * Text Domain: fox-blocks
+ * Domain Path: /languages
  *
  * @package FoxBlocks
  */
