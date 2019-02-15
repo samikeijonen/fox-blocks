@@ -28,6 +28,7 @@
 		"@wordpress/babel-preset-default": "^3.0.2",
 		"@wordpress/browserslist-config": "^2.2.3",
 		"@wordpress/eslint-plugin": "^1.0.1",
+		"babel-plugin-transform-react-jsx": "^6.24.1",
 		"cross-env": "^5.2.0",
 		"eslint": "^5.13.0",
 		"eslint-plugin-jest": "^22.2.2",
