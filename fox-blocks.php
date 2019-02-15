@@ -164,6 +164,8 @@ final class Plugin {
 				'style'         => 'fox-blocks-styles',
 			)
 		);
+
+		wp_set_script_translations( 'fox-blocks', 'fox-blocks', 'translations' );
 	}
 
 	/**
