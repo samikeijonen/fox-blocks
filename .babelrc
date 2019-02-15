@@ -1,13 +1,17 @@
 {
-	"presets": ["@wordpress/default"],
+	"presets": [ "@wordpress/babel-preset-default" ],
 	"plugins": [
-		[ "@wordpress/babel-plugin-import-jsx-pragma", {
-				"scopeVariable": "createElement",
-				"source": "@wordpress/element",
-				"isDefault": false,
-		} ],
-		[ "@babel/transform-react-jsx", {
-				"pragma": "createElement",
-		} ],
-	],
-}
+		  [
+		"transform-react-jsx",
+		{
+				"pragma": "wp.element.createElement"
+		}
+	  ],
+	  [
+		"@wordpress/babel-plugin-makepot",
+		{
+				"output": "languages/temenos-js.pot"
+		}
+	  ],
+	  ]
+  }
