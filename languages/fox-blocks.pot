@@ -1,0 +1,35 @@
+# Copyright (C) 2019 Sami Keijonen
+# This file is distributed under the same license as the Fox Blocks plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Fox Blocks 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/fox-blocks\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2019-02-15T08:52:04+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.1.0\n"
+"X-Domain: fox-blocks\n"
+
+#. Plugin Name of the plugin
+msgid "Fox Blocks"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://github.com/samikeijonen/fox-blocks/"
+msgstr ""
+
+#. Description of the plugin
+msgid "Fox Blocks for editor."
+msgstr ""
+
+#. Author of the plugin
+msgid "Sami Keijonen"
+msgstr ""
+
+#: src/blocks/remote-posts/index.php:29
+msgid "There were no posts found."
+msgstr ""
