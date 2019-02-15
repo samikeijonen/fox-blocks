@@ -10,7 +10,7 @@
 	  [
 		"@wordpress/babel-plugin-makepot",
 		{
-				"output": "languages/temenos-js.pot"
+				"output": "languages/fox-blocks-js.pot"
 		}
 	  ],
 	  ]
