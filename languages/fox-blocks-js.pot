@@ -3,30 +3,10 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: src/blocks/button-cta-1/edit.js:106
-msgid "Callout title"
+#: src/blocks/button-cta-1/index.js:18
+msgid "Button CTA 1"
 msgstr ""
 
-#: src/blocks/button-cta-1/edit.js:113
-msgid "Callout text"
-msgstr ""
-
-#: src/blocks/button-cta-1/edit.js:119
-msgid "Add text…"
-msgstr ""
-
-#: src/blocks/button-cta-1/edit.js:139
-msgid "Color Settings"
-msgstr ""
-
-#: src/blocks/button-cta-1/edit.js:144
-msgid "Background Color"
-msgstr ""
-
-#: src/blocks/button-cta-1/edit.js:149
-msgid "Text Color"
-msgstr ""
-
-#: src/blocks/button-cta-1/edit.js:176
-msgid "Apply"
+#: src/blocks/button-cta-1/index.js:19
+msgid "Button CTA desc 1, with button block"
 msgstr ""
