@@ -1,19 +1,19 @@
 // External dependencies.
 import classnames from 'classnames';
 
-// WordPress dependencies.
-const { Fragment } = wp.element;
 const { __ } = wp.i18n;
-const { registerBlockType } = wp.blocks;
+
+// Internal dependencies.
+import edit from './edit';
 
 // Register editor components.
 const {
-	AlignmentToolbar,
-	BlockControls,
 	InnerBlocks,
 } = wp.editor;
 
-registerBlockType( 'fox-blocks/innerblocks-cta', {
+const name = 'fox-blocks/innerblocks-cta';
+
+const settings = {
 	title: __( 'Callout', 'fox-blocks' ),
 	description: __( 'Callout with title, text, and CTA button.', 'fox-blocks' ),
 	icon: 'admin-site',
@@ -29,41 +29,7 @@ registerBlockType( 'fox-blocks/innerblocks-cta', {
 		},
 	},
 
-	edit( { attributes, className, setAttributes } ) {
-		const { alignment } = attributes;
-
-		const classNameEdit = classnames(
-			'callout',
-			{ [ `text-${ alignment }` ]: alignment },
-			className
-		);
-
-		const styles = {
-			textAlign: alignment,
-		};
-
-		return (
-			<Fragment>
-				<BlockControls>
-					<AlignmentToolbar
-						value={ alignment }
-						onChange={ ( nextAlign ) => setAttributes( { alignment: nextAlign } ) }
-					/>
-				</BlockControls>
-				<div style={ styles } className={ classNameEdit ? classNameEdit : undefined }>
-					<InnerBlocks
-						allowedBlocks={ [ 'core/heading', 'core/paragraph', 'core/button' ] }
-						template={ [
-							[ 'core/heading' ],
-							[ 'core/paragraph' ],
-							[ 'core/button' ],
-						] }
-						templateLock={ false }
-					/>
-				</div>
-			</Fragment>
-		);
-	},
+	edit,
 
 	save( { attributes } ) {
 		const { alignment } = attributes;
@@ -84,4 +50,6 @@ registerBlockType( 'fox-blocks/innerblocks-cta', {
 			</div>
 		);
 	},
-} );
+};
+
+export { name, settings };

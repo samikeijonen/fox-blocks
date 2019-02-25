@@ -3,10 +3,10 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: src/blocks/button-cta-1/index.js:18
-msgid "Button CTA 1"
+#: src/blocks/innerblocks-cta/index.js:17
+msgid "Callout"
 msgstr ""
 
-#: src/blocks/button-cta-1/index.js:19
-msgid "Button CTA desc 1, with button block"
+#: src/blocks/innerblocks-cta/index.js:18
+msgid "Callout with title, text, and CTA button."
 msgstr ""

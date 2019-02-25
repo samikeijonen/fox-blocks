@@ -1,17 +1,18 @@
 {
 	"presets": [ "@wordpress/babel-preset-default" ],
 	"plugins": [
-		  [
+		[
 		"transform-react-jsx",
-		{
-				"pragma": "wp.element.createElement"
-		}
-	  ],
-	  [
+			{
+					"pragma": "wp.element.createElement"
+			}
+		],
+		"react-hot-loader/babel",
+		[
 		"@wordpress/babel-plugin-makepot",
-		{
-				"output": "languages/fox-blocks-js.pot"
-		}
-	  ],
-	  ]
-  }
+			{
+					"output": "languages/fox-blocks-js.pot"
+			}
+		],
+	]
+}

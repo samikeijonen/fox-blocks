@@ -36,7 +36,8 @@
 		"eslint-plugin-jsx-a11y": "^6.2.1",
 		"eslint-plugin-react": "^7.12.4",
 		"parcel-bundler": "^1.11.0",
-		"postcss-editor-styles": "^0.1.4"
+		"postcss-editor-styles": "^0.1.4",
+		"react-hot-loader": "^4.7.1"
 	},
 	"browserslist": [
 		"extends @wordpress/browserslist-config"
