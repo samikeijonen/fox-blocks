@@ -1,0 +1,18 @@
+.components-button.remove-image {
+	background-color: #da1e2e;
+	left: 0;
+	padding: 0.5em;
+	position: absolute;
+	top: 0;
+
+	&:hover,
+	&:focus,
+	&:active {
+		background-color: inherit;
+	}
+}
+
+.components-button.remove-image:hover,
+.components-button.remove-image:focus {
+	background-color: inherit;
+}

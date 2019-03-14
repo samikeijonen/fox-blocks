@@ -1,0 +1,24 @@
+.has-background-bg {
+	color: #fff;
+}
+
+.wp-block-fox-blocks-innerblocks-cta-bg {
+	padding: 8rem 1rem;
+	position: relative;
+}
+
+.wp-block-fox-blocks-innerblocks-cta-bg > * {
+	position: relative;
+	z-index: 1;
+}
+
+.wp-block-fox-blocks-innerblocks-cta-bg.has-dim::before {
+	background-color: #111;
+	bottom: 0;
+	content: "";
+	left: 0;
+	opacity: 0.5;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
