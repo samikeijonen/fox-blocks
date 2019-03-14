@@ -84,7 +84,7 @@ class MediaTextEdit extends Component {
 
 		return (
 			<MediaContainer
-				className="block-library-media-text__media-container"
+				className="wp-block-fox-blocks-media-text__media"
 				onSelectMedia={ this.onSelectMedia }
 				{ ...{ mediaAlt, mediaId, mediaPosition, mediaType, mediaUrl } }
 			/>

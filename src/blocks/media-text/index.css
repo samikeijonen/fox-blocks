@@ -9,34 +9,38 @@
 	grid-gap: var(--spacing-unit-4x);
 }
 
-.wp-block-media-text__media {
+.wp-block-fox-blocks-media-text__media {
 	margin: 0;
 }
 
 @supports (grid-area: auto) {
 	@media (min-width: 40em) {
 		.wp-block-fox-blocks-media-text {
-			grid-template-areas: "media-text-media media-text-content";
+			grid-template-areas: "fb-media-text-media fb-media-text-content";
 			grid-template-columns: repeat(2, 1fr);
-
-			&.has-media-on-the-right {
-				grid-template-areas: "media-text-content media-text-media";
-			}
 		}
 
-		.wp-block-media-text__media {
-			grid-area: media-text-media;
+		.wp-block-fox-blocks-media-text.has-media-on-the-right {
+			grid-template-areas: "fb-media-text-content fb-media-text-media";
 		}
 
-		.wp-block-media-text__content {
-			grid-area: media-text-content;
+		.wp-block-fox-blocks-media-text__media {
+			grid-area: fb-media-text-media;
+		}
+
+		.wp-block-fox-blocks-media-text__content {
+			grid-area: fb-media-text-content;
 		}
 	}
 
-	@media (min-width: 48em) {
+	@media (min-width: 62em) {
 		.wp-block-fox-blocks-media-text.alignfull {
-			grid-template-areas: "media-text-start media-text-media media-text-content media-text-end";
+			grid-template-areas: "fb-media-text-start fb-media-text-media fb-media-text-content fb-media-text-end";
 			grid-template-columns: auto minmax(0, calc(var(--max-width-wide) / 2 - var(--spacing-unit-2x))) minmax(0, calc(var(--max-width-wide) / 2 - var(--spacing-unit-2x))) auto;
+		}
+
+		.wp-block-fox-blocks-media-text.alignfull.has-media-on-the-right {
+			grid-template-areas: "fb-media-text-start fb-media-text-content fb-media-text-media fb-media-text-end";
 		}
 	}
 }
