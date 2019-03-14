@@ -6,3 +6,6 @@
 
 /* CTA for BG. */
 @import "./blocks/innerblocks-cta-bg/index.css";
+
+/* Media and text. */
+@import "./blocks/media-text/index.css";

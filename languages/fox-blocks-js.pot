@@ -3,22 +3,10 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: src/blocks/innerblocks-cta-bg/index.js:126
-msgid " Upload Image"
+#: src/blocks/media-text/index.js:24
+msgid "Media and text"
 msgstr ""
 
-#: src/blocks/innerblocks-cta-bg/index.js:140
-msgid "Remove Image"
-msgstr ""
-
-#: src/blocks/innerblocks-cta-bg/index.js:26
-msgid "Callout with background"
-msgstr ""
-
-#: src/blocks/innerblocks-cta-bg/index.js:27
-msgid "Callout background media."
-msgstr ""
-
-#: src/blocks/innerblocks-cta-bg/index.js:92
-msgid "Has dim background."
+#: src/blocks/media-text/index.js:25
+msgid "Media and text together."
 msgstr ""

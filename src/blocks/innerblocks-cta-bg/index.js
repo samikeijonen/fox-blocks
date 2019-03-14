@@ -1,5 +1,11 @@
-// External dependencies.
+/**
+ * External dependencies
+ */
 import classnames from 'classnames';
+
+/**
+ * Internal dependencies
+ */
 import icons from './icons';
 
 // WordPress dependencies.
