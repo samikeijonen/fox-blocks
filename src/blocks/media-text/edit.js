@@ -35,8 +35,8 @@ import MediaContainer from './media-container';
 const ALLOWED_BLOCKS = [ 'core/button', 'core/paragraph', 'core/heading', 'core/list' ];
 
 const TEMPLATE = [
-	[ 'core/heading', { placeholder: _x( 'Heading…', 'heading placeholder' ), level: 2 } ],
-	[ 'core/paragraph', { placeholder: _x( 'Content…', 'content placeholder' ) } ],
+	[ 'core/heading', { placeholder: _x( 'Heading…', 'heading placeholder', 'fox-blocks' ), level: 2 } ],
+	[ 'core/paragraph', { placeholder: _x( 'Content…', 'content placeholder', 'fox-blocks' ) } ],
 ];
 
 class MediaTextEdit extends Component {
@@ -123,12 +123,20 @@ class MediaTextEdit extends Component {
 			label: __( 'Background Color', 'fox-blocks' ),
 		} ];
 
-		const toolbarControls = [ {
-			icon: 'align-pull-right',
-			title: __( 'Show media on right' ),
-			isActive: mediaPosition === 'right',
-			onClick: () => setAttributes( { mediaPosition: 'right' } ),
-		} ];
+		const toolbarControls = [
+			{
+				icon: 'align-pull-left',
+				title: __( 'Show media on left', 'fox-blocks' ),
+				isActive: mediaPosition === 'left',
+				onClick: () => setAttributes( { mediaPosition: 'left' } ),
+			},
+			{
+				icon: 'align-pull-right',
+				title: __( 'Show media on right', 'fox-blocks' ),
+				isActive: mediaPosition === 'right',
+				onClick: () => setAttributes( { mediaPosition: 'right' } ),
+			},
+		];
 
 		const onMediaAltChange = ( newMediaAlt ) => {
 			setAttributes( { mediaAlt: newMediaAlt } );

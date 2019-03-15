@@ -2,6 +2,7 @@
  * External dependencies
  */
 import classnames from 'classnames';
+import noop from 'lodash';
 
 /**
  * WordPress dependencies
@@ -33,6 +34,9 @@ registerBlockType( 'fox-blocks/media-text', {
 		align: {
 			type: 'string',
 			default: 'wide',
+		},
+		backgroundColor: {
+			type: 'string',
 		},
 		mediaAlt: {
 			type: 'string',
@@ -86,7 +90,7 @@ registerBlockType( 'fox-blocks/media-text', {
 		return (
 			<div className={ className }>
 				<figure className="wp-block-fox-blocks-media-text__media" >
-					{ ( mediaTypeRenders[ mediaType ] )() }
+					{ ( mediaTypeRenders[ mediaType ] || noop )() }
 				</figure>
 
 				<div className="wp-block-fox-blocks-media-text__content">

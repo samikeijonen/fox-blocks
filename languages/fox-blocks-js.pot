@@ -7,25 +7,29 @@ msgstr ""
 msgid "Background Color"
 msgstr ""
 
-#: src/blocks/media-text/edit.js:128
+#: src/blocks/media-text/edit.js:129
+msgid "Show media on left"
+msgstr ""
+
+#: src/blocks/media-text/edit.js:135
 msgid "Show media on right"
 msgstr ""
 
-#: src/blocks/media-text/edit.js:138
+#: src/blocks/media-text/edit.js:146
 msgid "Media & Text Settings"
 msgstr ""
 
-#: src/blocks/media-text/edit.js:141
+#: src/blocks/media-text/edit.js:149
 msgid "Alt Text (Alternative Text)"
 msgstr ""
 
-#: src/blocks/media-text/edit.js:144
+#: src/blocks/media-text/edit.js:152
 msgid ""
 "Alternative text describes your image to people who can’t see it. Add a "
 "short description with its key details."
 msgstr ""
 
-#: src/blocks/media-text/edit.js:155
+#: src/blocks/media-text/edit.js:163
 msgid "Color Settings"
 msgstr ""
 
