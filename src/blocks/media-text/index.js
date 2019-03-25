@@ -38,6 +38,10 @@ registerBlockType( 'fox-blocks/media-text', {
 		backgroundColor: {
 			type: 'string',
 		},
+		marginTop: {
+			type: 'boolean',
+			default: false,
+		},
 		mediaAlt: {
 			type: 'string',
 			source: 'attribute',
@@ -68,6 +72,7 @@ registerBlockType( 'fox-blocks/media-text', {
 	save( { attributes } ) {
 		const {
 			backgroundColor,
+			marginTop,
 			mediaAlt,
 			mediaId,
 			mediaPosition,
@@ -84,6 +89,7 @@ registerBlockType( 'fox-blocks/media-text', {
 
 		const className = classnames( {
 			'has-media-on-the-right': 'right' === mediaPosition,
+			'mt-0': marginTop,
 			[ backgroundClass ]: backgroundClass,
 		} );
 

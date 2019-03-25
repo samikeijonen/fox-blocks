@@ -21,6 +21,7 @@ const { Component, Fragment } = wp.element;
 const {
 	PanelBody,
 	TextareaControl,
+	ToggleControl,
 	Toolbar,
 } = wp.components;
 
@@ -80,13 +81,13 @@ class MediaTextEdit extends Component {
 
 	renderMediaArea() {
 		const { attributes } = this.props;
-		const { mediaAlt, mediaId, mediaPosition, mediaType, mediaUrl } = attributes;
+		const { marginTop, mediaAlt, mediaId, mediaPosition, mediaType, mediaUrl } = attributes;
 
 		return (
 			<MediaContainer
 				className="wp-block-fox-blocks-media-text__media"
 				onSelectMedia={ this.onSelectMedia }
-				{ ...{ mediaAlt, mediaId, mediaPosition, mediaType, mediaUrl } }
+				{ ...{ marginTop, mediaAlt, mediaId, mediaPosition, mediaType, mediaUrl } }
 			/>
 		);
 	}
@@ -102,6 +103,7 @@ class MediaTextEdit extends Component {
 		} = this.props;
 
 		const {
+			marginTop,
 			mediaAlt,
 			mediaPosition,
 			mediaType,
@@ -142,6 +144,10 @@ class MediaTextEdit extends Component {
 			setAttributes( { mediaAlt: newMediaAlt } );
 		};
 
+		const toggleMarginTop = ( newMarginTop ) => {
+			setAttributes( { marginTop: newMarginTop } );
+		};
+
 		const mediaTextGeneralSettings = (
 			<PanelBody title={ __( 'Media & Text Settings', 'fox-blocks' ) }>
 				{ mediaType === 'image' && (
@@ -159,6 +165,13 @@ class MediaTextEdit extends Component {
 			<Fragment>
 				<InspectorControls>
 					{ mediaTextGeneralSettings }
+					<PanelBody title={ __( 'Layout settings', 'fox-blocks' ) }>
+						<ToggleControl
+							label={ __( 'Remove margin top', 'fox-blocks' ) }
+							checked={ !! marginTop }
+							onChange={ toggleMarginTop }
+						/>
+					</PanelBody>
 					<PanelColorSettings
 						title={ __( 'Color Settings', 'fox-blocks' ) }
 						initialOpen={ false }
