@@ -23,19 +23,19 @@
 	"author": "Sami Keijonen",
 	"license": "MIT",
 	"devDependencies": {
-		"@babel/core": "^7.3.4",
+		"@babel/core": "^7.4.0",
 		"@foxland/stylelint-config": "^1.1.0",
 		"@wordpress/babel-plugin-makepot": "^3.0.0",
-		"@wordpress/babel-preset-default": "^4.0.0",
+		"@wordpress/babel-preset-default": "^4.1.0",
 		"@wordpress/browserslist-config": "^2.3.0",
-		"@wordpress/eslint-plugin": "^2.0.0",
+		"@wordpress/eslint-plugin": "^2.1.0",
 		"babel-plugin-transform-react-jsx": "^6.24.1",
 		"cross-env": "^5.2.0",
-		"eslint": "^5.15.1",
-		"eslint-plugin-jest": "^22.3.2",
+		"eslint": "^5.15.3",
+		"eslint-plugin-jest": "^22.4.1",
 		"eslint-plugin-jsx-a11y": "^6.2.1",
 		"eslint-plugin-react": "^7.12.4",
-		"parcel-bundler": "^1.12.2",
+		"parcel-bundler": "^1.12.3",
 		"postcss-editor-styles": "^0.1.4",
 		"postcss-nested": "^4.1.2"
 	},
@@ -43,7 +43,7 @@
 		"extends @wordpress/browserslist-config"
 	],
 	"dependencies": {
-		"@wordpress/element": "^2.2.0",
+		"@wordpress/element": "^2.3.0",
 		"classnames": "^2.2.6"
 	}
 }
