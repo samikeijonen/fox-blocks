@@ -8,6 +8,7 @@ import './blocks/innerblocks-cta/';
 import './blocks/innerblocks-cta-bg/';
 import './blocks/remote-posts/';
 import './blocks/media-text/';
+import './blocks/media-embed-text/';
 
 // Style variations.
 import './blocks/style-variations/';

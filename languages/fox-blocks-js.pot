@@ -3,42 +3,42 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: src/blocks/media-text/edit.js:123
+#: src/blocks/media-embed-text/edit.js:110
 msgid "Background Color"
 msgstr ""
 
-#: src/blocks/media-text/edit.js:129
+#: src/blocks/media-embed-text/edit.js:116
 msgid "Show media on left"
 msgstr ""
 
-#: src/blocks/media-text/edit.js:135
+#: src/blocks/media-embed-text/edit.js:122
 msgid "Show media on right"
 msgstr ""
 
-#: src/blocks/media-text/edit.js:146
+#: src/blocks/media-embed-text/edit.js:133
 msgid "Media & Text Settings"
 msgstr ""
 
-#: src/blocks/media-text/edit.js:149
+#: src/blocks/media-embed-text/edit.js:136
 msgid "Alt Text (Alternative Text)"
 msgstr ""
 
-#: src/blocks/media-text/edit.js:152
+#: src/blocks/media-embed-text/edit.js:139
 msgid ""
 "Alternative text describes your image to people who can’t see it. Add a "
 "short description with its key details."
 msgstr ""
 
-#: src/blocks/media-text/edit.js:163
+#: src/blocks/media-embed-text/edit.js:150
 msgid "Color Settings"
 msgstr ""
 
-#: src/blocks/media-text/edit.js:38
+#: src/blocks/media-embed-text/edit.js:39
 msgctxt "heading placeholder"
 msgid "Heading…"
 msgstr ""
 
-#: src/blocks/media-text/edit.js:39
+#: src/blocks/media-embed-text/edit.js:40
 msgctxt "content placeholder"
 msgid "Content…"
 msgstr ""
