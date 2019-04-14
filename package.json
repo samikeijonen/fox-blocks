@@ -5,8 +5,8 @@
 	"main": "src/index.js",
 	"private": true,
 	"scripts": {
-		"start": "parcel watch src/index.js src/main.css src/editor.css",
-		"build": "parcel build src/index.js src/main.css src/editor.css",
+		"start": "parcel watch src/index.js src/frontend.js src/main.css src/editor.css",
+		"build": "parcel build src/index.js src/frontend.js src/main.css src/editor.css",
 		"lint": "npm run lint:css && npm run lint:js && npm run lint:php",
 		"lint:css": "cross-env stylelint './src/**/*.css'",
 		"lint:js": "cross-env eslint './src/**/*.js'",

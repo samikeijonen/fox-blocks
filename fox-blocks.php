@@ -142,6 +142,14 @@ final class Plugin {
 			true
 		);
 
+		wp_register_script(
+			'fox-blocks-fe',
+			$this->uri . 'dist/frontend.js',
+			array(),
+			'1.0.0',
+			true
+		);
+
 		wp_register_style(
 			'fox-blocks-styles',
 			$this->uri . 'dist/main.css',
@@ -161,6 +169,7 @@ final class Plugin {
 			array(
 				'editor_script' => 'fox-blocks',
 				'editor_style'  => 'fox-blocks-editor',
+				'script'        => 'fox-blocks-fe',
 				'style'         => 'fox-blocks-styles',
 			)
 		);

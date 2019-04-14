@@ -3,50 +3,18 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: src/blocks/media-text/edit.js:125
-msgid "Background Color"
+#: src/blocks/remote-posts/index.js:10
+msgid "Fetch remote posts from magazine."
 msgstr ""
 
-#: src/blocks/media-text/edit.js:131
-msgid "Show media on left"
+#: src/blocks/remote-posts/index.js:13
+msgid "remote posts"
 msgstr ""
 
-#: src/blocks/media-text/edit.js:137
-msgid "Show media on right"
+#: src/blocks/remote-posts/index.js:31
+msgid "Remote posts URL"
 msgstr ""
 
-#: src/blocks/media-text/edit.js:152
-msgid "Media & Text Settings"
-msgstr ""
-
-#: src/blocks/media-text/edit.js:155
-msgid "Alt Text (Alternative Text)"
-msgstr ""
-
-#: src/blocks/media-text/edit.js:158
-msgid ""
-"Alternative text describes your image to people who can’t see it. Add a "
-"short description with its key details."
-msgstr ""
-
-#: src/blocks/media-text/edit.js:168
-msgid "Layout settings"
-msgstr ""
-
-#: src/blocks/media-text/edit.js:170
-msgid "Remove margin top"
-msgstr ""
-
-#: src/blocks/media-text/edit.js:176
-msgid "Color Settings"
-msgstr ""
-
-#: src/blocks/media-text/edit.js:39
-msgctxt "heading placeholder"
-msgid "Heading…"
-msgstr ""
-
-#: src/blocks/media-text/edit.js:40
-msgctxt "content placeholder"
-msgid "Content…"
+#: src/blocks/remote-posts/index.js:9
+msgid "Fetch remote posts"
 msgstr ""
