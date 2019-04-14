@@ -92,7 +92,7 @@ wp.hooks.addFilter(
  * @param {Object} block      Blocks object.
  * @param {Object} attributes Blocks attributes.
  *
- * @return {Object} el Modified bock element.
+ * @return {Object} el Modified block element.
  */
 function saveMarginTopSettings( el, block, attributes ) {
 	if ( 'core/group' === block.name && attributes.topMarginReset ) {
