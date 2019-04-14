@@ -86,7 +86,7 @@ wp.hooks.addFilter(
 );
 
 /**
- * Add margin top attribute.
+ * Add margin top class in save element.
  *
  * @param {Object} el         Block element.
  * @param {Object} block      Blocks object.
