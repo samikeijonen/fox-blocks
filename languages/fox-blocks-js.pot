@@ -3,18 +3,14 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: src/blocks/remote-posts/index.js:10
-msgid "Fetch remote posts from magazine."
+#: src/blocks/margin-settings/index.js:66
+msgid "Reset margin top to zero"
 msgstr ""
 
-#: src/blocks/remote-posts/index.js:13
-msgid "remote posts"
+#: src/blocks/margin-settings/index.js:67
+msgid "No top margin."
 msgstr ""
 
-#: src/blocks/remote-posts/index.js:31
-msgid "Remote posts URL"
-msgstr ""
-
-#: src/blocks/remote-posts/index.js:9
-msgid "Fetch remote posts"
+#: src/blocks/margin-settings/index.js:67
+msgid "Has default top margin."
 msgstr ""

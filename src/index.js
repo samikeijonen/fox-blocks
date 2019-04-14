@@ -13,5 +13,8 @@ import './blocks/toc/';
 // Style variations.
 import './blocks/style-variations/';
 
+// Margin settings.
+import './blocks/margin-settings/';
+
 // Add classes to blocks.
 import './blocks/add-classes/';
